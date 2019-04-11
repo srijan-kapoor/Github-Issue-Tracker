@@ -1,13 +1,12 @@
 # Github Issues Tracker
 
-A project to track of open issues on Github repos.
+A project to keep track of open issues on Github repos.
 
 This project was bootstrapped with [Create React App] (https://github.com/facebook/create-react-app).
 
 ### Installation
 
 Below mentioned dependencies have been already integrated in the project
-Install the dependencies and devDependencies and start the server.
 
 ```sh
 "react-redux": "^7.0.1",
@@ -34,7 +33,7 @@ You can see all branches created by using :
 $ git branch -a
 ```
 
-More info on this can be found [here] (https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)
+More info on this can be found [here](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)
 
 Make sure to make a Pull Request before merging with the master branch.
 
