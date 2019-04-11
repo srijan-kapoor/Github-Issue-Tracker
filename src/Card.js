@@ -1,23 +1,21 @@
 import React from 'react';
+import Issue from './Issue';
 
 class Card extends React.Component {
-	
-	render {
+	render(){
 		return (
 			<div className="main-card-section">
+				<button onClick={this.props.increment} className="scroll-btn"> b </button>
+				<button className="scroll-btn"> f </button>
 				<div>
 					<span></span>
 					<span></span>
 					<span></span>
 				</div>
-				<div>
-					<div>
-						<h2></h2>
-						<div><img src="" alt="avatar_img"/> <span>username</span></div>
-					</div>
-					<p className="issue-details"></p>
-				<div>
+				<Issue data={this.props.data} />
 			</div>
 		)
 	}
 }
+
+export default Card; 

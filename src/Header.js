@@ -1,12 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-function Header(props) {
-	return (
-		<div className='header'>
-			<input type='text' onKeyPress={props.enter} onChange={props.funct}/>
-			<button onClick={props.click} style={{background: 'black', color: 'white', fontSize:'20px'}}>Search</button>
-		</div>
-	)
+class Header extends React.Component {
+
+	render (){
+		return (
+			<header className="primary header">
+				<div>
+					<h1>github issue tracker</h1>
+					<a href="#"><img src="" alt="site logo"/></a>
+				</div>
+				<div className="input-box">
+					<input type='text' onKeyPress={this.props.enter} onChange={this.props.funct} placeholder="Add username and repo name to search an issue" />
+					<button onClick={this.props.click}>search</button>
+				</div>
+			</header>
+		)
+	}
 }
 
 export default Header;

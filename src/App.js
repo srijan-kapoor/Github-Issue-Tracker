@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {connect} from 'react-redux';
 import Header from  './Header'
+import Card from './Card'
 
 class App extends Component {
 	state ={
@@ -17,20 +18,32 @@ class App extends Component {
 	handleClick =() => {
 		fetch(`https://api.github.com/repos/${this.state.value}/issues?page=${this.state.page}`).then(res => res.json()).then(data => this.props.dispatch({type: 'ADD_QUERY', payload: data}))
 	}
+	incrementPage = () => {
+		this.setState({page: this.state.page++});
+		this.handleClick();
+		console.log(this.state.page ,'increment')
+	}
 	handleEnter = (e) => {
 		if(e.key === 'Enter') {
 			this.handleClick()
 		}
 	}
   render() {
-  	console.log(this.props)
+  	console.log(this.props);
     return (
-      <div className="App">
-        <p>hello</p>
-        <Header enter={this.handleEnter}funct={this.handleInputValue} click={this.handleClick} />
-      </div>
+      <React.Fragment>
+        <Header enter={this.handleEnter} funct={this.handleInputValue} click={this.handleClick}/>
+        <Card increment={this.incrementPage} data={this.props.queriedArray.length ? this.props.queriedArray: this.props.defaultArray }/>
+      </React.Fragment>
     )
   }
 }
 
-export default connect()(App);
+function mapStateToProps(state) {
+	return {	
+		defaultArray: state.Issues,
+		queriedArray: state.QueryIssues,
+	}
+}
+
+export default connect(mapStateToProps)(App);
