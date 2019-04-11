@@ -14,8 +14,8 @@ class Card extends React.Component {
 		// console.log(this.state);
 		return (
 			<div className="main-card-section">
-				<button className="scroll-btn"> b </button>
-				<button className="scroll-btn"> f </button>
+				{/*<button className="scroll-btn"> b </button>
+				<button className="scroll-btn"> f </button>*/}
 				<div>
 					<span></span>
 					<span></span>
