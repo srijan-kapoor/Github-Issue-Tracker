@@ -1,0 +1,64 @@
+.primary-header {
+	display: flex;
+	background: #111;
+	justify-content: space-between;
+	padding: 20px ;
+	align-items: center;
+}
+
+.logo {
+	display: flex;
+}
+
+.logo h1 {
+	font-size: 30px;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.input {
+	font-size: 22px;
+	padding: 4px 8px;
+	border-radius: 2px;
+}
+
+.input::-webkit-input-placeholder {
+	font-size: 18px;
+}
+.issue {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	border-radius: 4px;
+	box-shadow: 0 0.5rem 1rem rgba(0,0,0,.175);
+	border: 1px solid rgba(0,0,0,.075);
+	width: 800px;
+	margin: 20px auto;
+}
+
+.user-name {
+	text-align: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	word-break: break-all;
+}
+
+.issue-title {
+	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+	margin-bottom: 20px;
+}
+
+.issue-details {
+	word-break: break-word;
+}
+
+.issue-title-div {
+	margin-left: 40px;
+	width: 100px;
+}
+
+.issue-title-div img {
+	width: 100px;
+}
