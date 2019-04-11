@@ -6,7 +6,7 @@ class Card extends React.Component {
 		return (
 			<div className="main-card-section">
 				<button onClick={this.props.increment} className="scroll-btn"> b </button>
-				<button className="scroll-btn"> f </button>
+				<button onClick={this.props.decrement} className="scroll-btn"> f </button>
 				<div>
 					<span></span>
 					<span></span>
