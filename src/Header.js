@@ -10,7 +10,7 @@ class Header extends React.Component {
 					<a href="#"><img src="" alt="site logo"/></a>
 				</div>
 				<div className="input-box">
-					<input type='text' onKeyPress={this.props.enter} onChange={this.props.funct} placeholder="Add username and repo name to search an issue" />
+					<input className="input-text" type='text' value={this.props.inputValue}onKeyPress={this.props.enter} onChange={this.props.funct} placeholder="username/repo" />
 					<button onClick={this.props.click}>search</button>
 				</div>
 			</header>
