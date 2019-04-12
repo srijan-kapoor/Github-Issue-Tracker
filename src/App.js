@@ -24,15 +24,22 @@ class App extends Component {
 	fetchData = () => {
 		console.log('fetching data')
 		fetch(`https://api.github.com/repos/${this.state.value ? this.state.value.toLowerCase() : 'google/googletest'}/issues?page=${this.state.page}`).then(res => res.json()).then(data => {
-			this.props.dispatch({type: 'ADD_DATA', payload: data})
+			if(data.length) {
+				this.props.dispatch({type: 'ADD_DATA', payload: data})
+			} else {
+				this.props.dispatch({type: 'ADD_DATA', payload: []})
+			}
 			this.setState({loading: false})
 		})
 			
 	}
 
-	handleClick =() => {
-		this.fetchData()
-		this.setState({loading: true})
+	handleClick =(e) => {
+		if(this.state.value !== '') {
+			this.fetchData()
+			this.setState({loading: true, value: ''})
+		}
+
 	}
 
 	incrementPage = () => {
@@ -52,22 +59,24 @@ class App extends Component {
 	}
 
 	handleFilter = (data) => {
-		// this.setState({type: data, })
-	// 	data.filter(val => { return val.labels.some(obj => obj.name.split(':')[0] == "Type") 
-	// })
+		this.setState({type: data, })
+		data.filter(val => { return val.labels.some(obj => obj.name.split(':')[0] == "Type") 
+	})
+	}
 
   render() {
+
     return (
 			<React.Fragment>
+				<Header enter={this.handleEnter} inputValue={this.state.value} funct={this.handleInputValue} click={this.handleClick}/>
 				{
 					(this.state.loading) ? <Loading /> :
 					(
 						<>
-							<Header enter={this.handleEnter} funct={this.handleInputValue} click={this.handleClick}/>
 							<Labels filter={this.handleFilter} />
-      				<Card increment={this.incrementPage} decrement={this.decrementPage}data={this.props.defaultArray}/>
+      				<Card inputValue={this.state.value} increment={this.incrementPage} decrement={this.decrementPage} data={this.props.defaultArray}/>
       			</>
-      		)
+ 					)
 				}
   		</React.Fragment>
 	  )
