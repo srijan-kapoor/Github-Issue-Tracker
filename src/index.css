@@ -112,3 +112,43 @@
 	right:0;
 	margin-right: 20px;
 }
+.labels-main{
+	margin: 20px;
+	/*margin: 0 auto;*/
+	text-align: center;
+}
+.labels-main div {
+	display: inline-block;
+	margin-right: 10px;
+	color: black;
+	font-size: 13px;
+	letter-spacing: 1px;
+}
+.label {
+	width: 4.2rem;
+	height: 1.6rem;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	color: #fff;
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: 500;
+	cursor: pointer;
+	display: inline-block;
+	margin: 4px 2px;
+}
+.bug {
+	background: red;
+	width: 3.2rem;
+}
+.level {
+	background: #bca2d6;
+}
+.type {
+	background: #9fb9ce;
+}
+.component {
+	background: #1D76DA;
+	width: 5.2rem;
+}

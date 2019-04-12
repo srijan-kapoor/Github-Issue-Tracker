@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import Header from  './Header'
 import Card from './Card'
 import Loading from './Loading'
+import Labels from './Labels';
 
 
 class App extends Component {
@@ -60,7 +61,14 @@ class App extends Component {
 		}
 	}
 
+	handleFilter = (data) => {
+		this.setState({type: data, })
+		data.filter(val => { return val.labels.some(obj => obj.name.split(':')[0] == "Type") 
+	})
+	}
+
   render() {
+
     return (
 			<React.Fragment>
 				<Header enter={this.handleEnter} inputValue={this.state.value} funct={this.handleInputValue} click={this.handleClick}/>
@@ -68,7 +76,8 @@ class App extends Component {
 					(this.state.loading) ? <Loading /> :
 					(
 						<>
-      				<Card inputValue={this.state.value} increment={this.incrementPage} decrement={this.decrementPage}data={this.props.defaultArray}/>
+							<Labels filter={this.handleFilter} />
+      				<Card inputValue={this.state.value} increment={this.incrementPage} decrement={this.decrementPage} data={this.props.defaultArray}/>
       			</>
  					)
 				}
