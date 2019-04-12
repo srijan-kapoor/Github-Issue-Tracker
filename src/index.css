@@ -152,3 +152,25 @@
 	background: #1D76DA;
 	width: 5.2rem;
 }
+.pop-repo {
+	margin: 0 4px 4px 0;
+	outline: 0;
+	cursor: pointer;
+	background: #dee7ed;
+}
+.repos p {
+	margin-right: 4px;
+	font-family: 'Barlow', sans-serif;
+	font-weight: 500;
+	font-size: 14px;
+}
+.pop-repo:hover {
+	background: #C2F27B;
+	color: 
+}
+.repos {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 20px;
+}

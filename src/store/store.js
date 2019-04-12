@@ -1,8 +1,10 @@
 import {createStore, combineReducers} from 'redux';
-import {Issues} from './reducer';
+import {Issues, popularRepos} from './reducer';
 
 const rootReducer = combineReducers({
 	Issues,
+	popularRepos,
+
 })
 
 export const store = createStore(rootReducer);
