@@ -7,3 +7,13 @@ export function Issues(state=[], action) {
 			return state;
 	}
 }
+
+export function popularRepos(state=[], action) {
+	console.log(state, action)
+	switch (action.type) {
+		case 'ADD_TRENDING_REPOS':
+			return [...state, action.popularData]
+		default:
+			return state;
+	}
+}

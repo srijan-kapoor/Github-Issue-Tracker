@@ -4,6 +4,7 @@ import Header from  './Header'
 import Card from './Card'
 import Loading from './Loading'
 import Labels from './Labels';
+import Popular from './Popular';
 
 
 class App extends Component {
@@ -73,6 +74,7 @@ class App extends Component {
 					(this.state.loading) ? <Loading /> :
 					(
 						<>
+							<Popular />
 							<Labels filter={this.handleFilter} />
       				<Card inputValue={this.state.value} increment={this.incrementPage} decrement={this.decrementPage} data={this.props.defaultArray}/>
       			</>
