@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,500,700');
+
 .primary-header {
 	display: flex;
 	background: #111;
@@ -11,9 +14,11 @@
 }
 
 .logo h1 {
-	font-size: 30px;
+	font-size: 36px;
 	color: #fff;
 	text-transform: uppercase;
+	font-family: 'Lato', sans-serif;
+	letter-spacing: 2px;
 }
 
 .input {
@@ -34,24 +39,22 @@
 	border: 1px solid rgba(0,0,0,.075);
 	width: 800px;
 	margin: 20px auto;
+	background: #b8c4d1;
 }
 
 .user-name {
 	text-align: center;
-	font-size: 16px;
-	text-transform: uppercase;
-	word-break: break-all;
+	font-size: 12px;
 }
 
 .issue-title {
-	font-size: 30px;
-	font-weight: bold;
-	font-style: italic;
+	font-size: 24px;
 	margin-bottom: 20px;
 }
 
 .issue-details {
 	word-break: break-word;
+	font-family: 'Barlow', sans-serif;
 }
 
 .issue-title-div {
@@ -60,5 +63,37 @@
 }
 
 .issue-title-div img {
-	width: 100px;
+	width: 80px;
+	border-radius: 50%;
+	height: 80px;
+}
+.input-box{
+	width: 300px;
+	height: 2.4rem;
+}
+.input-box button {
+	height: 2.4rem;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	color: #fff;
+	text-transform: uppercase;
+}
+.input-text {
+	height: 2.4rem;
+	width: 240px;
+	padding: 10px;
+}
+.scroll-btn {
+	width: 5rem;
+	height: 2.4rem;
+	background: black;
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	margin-left: 20px;
+}
+.after {
+	right:0;
+	margin-right: 20px;
 }
