@@ -11,6 +11,11 @@ class App extends Component {
 		value: '',
 		page: 1,
 		loading: true,
+		isFilter : true,
+		isClicked: false,
+		filterLabel: '',
+		filtered : [],
+		popular: [],
 	}
 
 	handleInputValue =(e) => {
@@ -23,7 +28,7 @@ class App extends Component {
 
 	fetchData = () => {
 		console.log(this.state.page)
-		fetch(`https://api.github.com/repos/${this.state.value ? this.state.value.toLowerCase() : 'google/googletest'}/issues?page=${this.state.page}`).then(res => res.json()).then(data => {
+		fetch(`https://api.github.com/repos/${this.state.value ? this.state.value.toLowerCase() : 'facebook/react'}/issues?page=${this.state.page}`).then(res => res.json()).then(data => {
 			if(data.length) {
 				this.props.dispatch({type: 'ADD_DATA', payload: data.map(v => ({...v, isClicked: false}))})
 			} else {
@@ -62,12 +67,14 @@ class App extends Component {
 	}
 
 	handleFilter = (data) => {
-		this.setState({type: data, })
-		data.filter(val => { return val.labels.some(obj => obj.name.split(':')[0] == "Type") 
-	})
+		this.setState({ isFilter: !this.state.isFilter, filterLabel: data })
 	}
 
   render() {
+  	console.log(this.state)
+  	let filtered = this.props.defaultArray.filter(val => { return val.labels.some(obj => obj.name.split(':')[0] === this.state.filterLabel)
+		})
+  	const isFilter = this.state.isFilter;
 
     return (
 			<React.Fragment>
@@ -77,7 +84,7 @@ class App extends Component {
 					(
 						<>
 							<Labels filter={this.handleFilter} />
-      				<Card inputValue={this.state.value} increment={this.incrementPage} decrement={this.decrementPage} data={this.props.defaultArray}/>
+      				<Card inputValue={this.state.value} increment={this.incrementPage} decrement={this.decrementPage} data={(filtered.length && !isFilter ) ? filtered : this.props.defaultArray}/>
       			</>
  					)
 				}

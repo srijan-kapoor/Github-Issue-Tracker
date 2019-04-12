@@ -11,11 +11,12 @@ class Issue extends React.Component {
 
 	getDate(string) {
    const array = string.split('T').splice(0, 1)
-		return array.reverse()
+		return array[0].split('-').reverse().join('-')
 	}
 
 	render () {
 		const { data } = this.props;
+		console.log(this.props)
 		return (
 			<React.Fragment>
 				{

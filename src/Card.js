@@ -3,6 +3,7 @@ import Issue from './Issue';
 
 class Card extends React.Component {
 	render(){
+		console.log(this.props)
 		return (
 			<div className="main-card-section">
 				<button onClick={this.props.decrement} className="scroll-btn"> Previous </button>

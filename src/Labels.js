@@ -1,15 +1,9 @@
 import React from 'react';
 
 class Labels extends React.Component {
-	constructor(){
-		super()
-		this.state = {
-
-		}
-	}
 
 	handleFilterEvent = (e) => {
-		this.props.handleFilter(e.target.name) 
+		this.props.filter(e.target.name) 
 	}
 
 	render() {
