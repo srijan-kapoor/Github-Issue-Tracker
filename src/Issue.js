@@ -12,11 +12,11 @@ class Issue extends React.Component {
 						<div className="issue" key={uuid()}>
 							<div>
 								<h2 className="issue-title">{v.title}</h2>
-								<p className="issue-details">{v.body}</p>
+								<p className="issue-details">({v.body.slice(0, 200)}</p>
 							</div>
 							<div className="issue-title-div">
 								<img src={v.user.avatar_url} alt="avatar_img"/>
-								<p className="user-name">{v.user.login}</p>
+								<p className="user-name">@{v.user.login}</p>
 							</div>
 						</div>
 				)})}
