@@ -7,10 +7,10 @@ class Header extends React.Component {
 			<header className="primary-header">
 				<div className="logo">
 					<h1>github issue tracker</h1>
-					<a href="#"></a>
+					<a href="#"><img src="" alt="site logo"/></a>
 				</div>
 				<div className="input-box">
-					<input className="input-text" type='text' onKeyPress={this.props.enter} onChange={this.props.funct} placeholder="username/repo" />
+					<input type='text' onKeyPress={this.props.enter} onChange={this.props.funct} placeholder="Add username and repo name to search an issue" />
 					<button onClick={this.props.click}>search</button>
 				</div>
 			</header>
