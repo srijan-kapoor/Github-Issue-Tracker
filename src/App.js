@@ -21,22 +21,21 @@ class App extends Component {
 	}
 
 	fetchData = () => {
-		console.log('fetching data')
+		console.log(this.state.page)
 		fetch(`https://api.github.com/repos/${this.state.value ? this.state.value.toLowerCase() : 'google/googletest'}/issues?page=${this.state.page}`).then(res => res.json()).then(data => {
 			if(data.length) {
-				this.props.dispatch({type: 'ADD_DATA', payload: data})
+				this.props.dispatch({type: 'ADD_DATA', payload: data.map(v => ({...v, isClicked: false}))})
 			} else {
 				this.props.dispatch({type: 'ADD_DATA', payload: []})
 			}
 			this.setState({loading: false})
 		})
-			
 	}
 
-	handleClick =(e) => {
+	handleClick = (e) => {
+		this.setState({page: 1, loading: true, value: ''})
 		if(this.state.value !== '') {
 			this.fetchData()
-			this.setState({loading: true, value: ''})
 		}
 
 	}
@@ -47,8 +46,12 @@ class App extends Component {
 	}
 
 	decrementPage = () => {
-		this.setState({page: this.state.page - 1, loading: true})
-		this.fetchData()
+		if(this.state.page > 1) {
+			console.log('decrement')
+			this.setState({page: this.state.page - 1, loading: true})
+			this.fetchData()
+		}
+		console.log('no decrement')
 	}
 
 	handleEnter = (e) => {

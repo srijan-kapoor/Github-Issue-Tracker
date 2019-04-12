@@ -42,6 +42,21 @@
 	background: #b8c4d1;
 }
 
+.issueOnClick {
+	display: flex;
+	justify-content: space-between;
+}
+
+.detailInfo {
+	padding: 20px;
+	border-radius: 4px;
+	box-shadow: 0 0.5rem 1rem rgba(0,0,0,.175);
+	border: 1px solid rgba(0,0,0,.075);
+	width: 800px;
+	margin: 20px auto;
+	background: linear-gradient(rgba(184, 196, 209,1), rgba(30,144,255,0.5)) ;
+}
+
 .user-name {
 	text-align: center;
 	font-size: 12px;
@@ -89,7 +104,7 @@
 	height: 2.4rem;
 	background: black;
 	color: #fff;
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	margin-left: 20px;
 }
