@@ -5,7 +5,7 @@ class Header extends React.Component {
 	render (){
 		return (
 			<header className="primary-header">
-				<div className="logo">
+				<div onClick={this.props.click} className="logo">
 					<h1>github issue tracker</h1>
 				</div>
 				<div className="input-box">

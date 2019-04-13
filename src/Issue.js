@@ -26,7 +26,7 @@ class Issue extends React.Component {
 							{
 								v.isClicked ? (
 									<div className="detailInfo" onClick={() => this.handleClick(v)} key={uuid()}>
-										<h1>Created Date: {this.getDate(v.created_at)}</h1>
+										<h1 style={{marginBottom: '20px'}}>Created Date: {this.getDate(v.created_at)}</h1>
 										<div className='issueOnClick'>
 											<div>
 												<h2 className="issue-title">{v.title}</h2>

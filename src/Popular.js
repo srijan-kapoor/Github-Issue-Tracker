@@ -13,7 +13,8 @@ class Popular extends React.Component {
 			popularData: data.map(item => {
 			  return {
 			  	name:item.name,
-			    author:item.author
+			    author:item.author,
+			    url: item.url,
 			  }
 			})
 		})
@@ -32,16 +33,13 @@ class Popular extends React.Component {
 						<div className="repos">
 						<p>Trending</p>
 							{
-								this.props.repos.map(item => {
-									return(item.map(v => {
+								this.props.repos.map((item,i) => {
 										return (
-											<a href={v.url}>
-												<button className="pop-repo">{v.name}</button>
+											<a onClick={() => this.props.labelName(item)} key={i}href='#'>
+												<button className="pop-repo">{item.name}</button>
 											</a>
 										)
 									})
-									
-								)})
 							}
 						</div>
 					)

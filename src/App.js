@@ -17,6 +17,7 @@ class App extends Component {
 		filterLabel: '',
 		filtered : [],
 		popular: [],
+		popularName: '',
 	}
 
 	handleInputValue =(e) => {
@@ -28,8 +29,8 @@ class App extends Component {
 	}
 
 	fetchData = () => {
-		console.log(this.state.page)
-		fetch(`https://api.github.com/repos/${this.state.value ? this.state.value.toLowerCase() : 'facebook/react'}/issues?page=${this.state.page}`).then(res => res.json()).then(data => {
+		(this.state.popularName) ? (
+			fetch(`https://api.github.com/repos/${this.state.popularName}/issues?page=${this.state.page}`).then(res => res.json()).then(data => {
 			if(data.length) {
 				this.props.dispatch({type: 'ADD_DATA', payload: data.map(v => ({...v, isClicked: false}))})
 			} else {
@@ -37,13 +38,30 @@ class App extends Component {
 			}
 			this.setState({loading: false})
 		})
+		) 
+		:
+			(fetch(`https://api.github.com/repos/${this.state.value ? this.state.value.toLowerCase() : 'facebook/react'}/issues?page=${this.state.page}`).then(res => res.json()).then(data => {
+			if(data.length) {
+				this.props.dispatch({type: 'ADD_DATA', payload: data.map(v => ({...v, isClicked: false}))})
+			} else {
+				this.props.dispatch({type: 'ADD_DATA', payload: []})
+			}
+			this.setState({loading: false})
+		}))
 	}
 
 	handleClick = (e) => {
-		this.setState({page: 1, loading: true, value: ''})
 		if(this.state.value !== '') {
 			this.fetchData()
 		}
+		this.setState({page: 1, loading: true, value: ''})
+
+	}
+
+	getLabelValue = (data) => {
+		const {author , name} = data;
+		this.setState({popularName: `${author}/${name}`, page: 1})
+		this.fetchData()
 
 	}
 
@@ -58,7 +76,6 @@ class App extends Component {
 			this.setState({page: this.state.page - 1, loading: true})
 			this.fetchData()
 		}
-		console.log('no decrement')
 	}
 
 	handleEnter = (e) => {
@@ -84,7 +101,7 @@ class App extends Component {
 					(this.state.loading) ? <Loading /> :
 					(
 						<>
-							<Popular />
+							<Popular labelName={this.getLabelValue}/>
 							<Labels filter={this.handleFilter} />
       				<Card inputValue={this.state.value} increment={this.incrementPage} decrement={this.decrementPage} data={(filtered.length && !isFilter ) ? filtered : this.props.defaultArray}/>
       			</>
