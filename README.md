@@ -2,6 +2,8 @@
 
 A project to keep track of open issues on Github repos.
 
+See it live [here](https://github-issue-tracker.netlify.com/#).
+
 This project was bootstrapped with [Create React App] (https://github.com/facebook/create-react-app).
 
 ### Installation
