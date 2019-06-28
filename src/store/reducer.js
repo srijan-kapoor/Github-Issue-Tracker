@@ -4,7 +4,7 @@ export function Issues(state=[], action) {
 			console.log(action.payload, 'reducer')
 			return action.payload;
 		case 'TOGGLE':
-			return [...state].map(value => action.payload.id === value.id ? ({...value, isClicked: !action.payload.isClicked}): value)
+			return [...state].map(value => action.payload.id === value.id ? ({...value, isClicked: !action.payload.isClicked}): {...value, isClicked: false})
 		default: 
 			return state;
 	}
