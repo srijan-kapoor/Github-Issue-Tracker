@@ -89,6 +89,9 @@
 .input-box {
   width: 300px;
   height: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  background: green;
 }
 .input-box button {
   height: 2.4rem;
