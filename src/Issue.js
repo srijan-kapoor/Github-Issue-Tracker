@@ -1,10 +1,8 @@
 import React from "react";
-import uuid from "./uuid";
 import { connect } from "react-redux";
 
 class Issue extends React.Component {
   handleClick = (data) => {
-    console.log(data);
     this.props.dispatch({ type: "TOGGLE", payload: data });
   };
 
@@ -18,14 +16,14 @@ class Issue extends React.Component {
 
     return (
       <React.Fragment>
-        {(data ? data : []).map((v) => {
+        {(data ? data : []).map((v, i) => {
           return (
             <div>
               {v.isClicked ? (
                 <div
                   className="detailInfo"
                   onClick={() => this.handleClick(v)}
-                  key={uuid()}
+                  key={i}
                 >
                   <h1 style={{ marginBottom: "20px" }}>
                     Created Date: {this.getDate(v.created_at)}
@@ -43,9 +41,9 @@ class Issue extends React.Component {
                 </div>
               ) : (
                 <div
+                  key={i}
                   className="issue"
                   onClick={() => this.handleClick(v)}
-                  key={uuid()}
                 >
                   <div>
                     <h2 className="issue-title">{v.title}</h2>

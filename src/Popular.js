@@ -2,9 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 
 class Popular extends React.Component {
-  state = { popularRepos: [] };
+  state = { err: null, popularRepos: [] };
 
-  componentDidMount = () => {
+  fetchData = () => {
     fetch("https://github-trending-api.now.sh/repositories")
       .then((res) => res.json())
       .then((data) => {
@@ -18,7 +18,14 @@ class Popular extends React.Component {
             };
           }),
         });
+      })
+      .catch((err) => {
+        console.log({ err });
       });
+  };
+
+  componentDidMount = () => {
+    this.fetchData();
   };
 
   // this.setState({popularRepos: data})
@@ -31,9 +38,9 @@ class Popular extends React.Component {
         {this.props.repos.map((item, i) => {
           return (
             <button
+              key={i}
               className="pop-repo"
               onClick={() => this.props.labelName(item)}
-              key={i}
             >
               {item.name}
             </button>
