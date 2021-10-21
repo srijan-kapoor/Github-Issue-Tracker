@@ -13,7 +13,7 @@ class Header extends React.Component {
             type="text"
             value={this.props.inputValue}
             onKeyPress={this.props.enter}
-            onChange={this.props.funct}
+            onChange={this.props.cb}
             placeholder="username/repo"
           />
           <button onClick={this.props.click}>search</button>

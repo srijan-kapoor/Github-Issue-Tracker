@@ -114,7 +114,7 @@ class App extends Component {
         <Header
           enter={this.handleEnter}
           inputValue={this.state.value}
-          funct={this.handleInputValue}
+          cb={this.handleInputValue}
           click={this.handleClick}
         />
 
