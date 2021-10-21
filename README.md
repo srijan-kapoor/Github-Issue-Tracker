@@ -6,7 +6,7 @@ See it live [here](https://github-issue-tracker.netlify.com/#).
 
 This project was bootstrapped with [Create React App] (https://github.com/facebook/create-react-app).
 
-### Installation
+## Installation
 
 Below mentioned dependencies have been already integrated in the project
 
@@ -16,29 +16,32 @@ Below mentioned dependencies have been already integrated in the project
 "styled-components": "^4.2.0"
 ```
 
-### Branching
-```
+## Branching
+
+```sh
 $ git pull
 ```
+
 Create the branch on your local machine and switch in this branch :
-```
+
+```sh
 $ git checkout -b [name_of_your_new_branch]
 ```
+
 Push the branch on github :
-```
+
+```sh
 $ git push origin [name_of_your_new_branch]
 ```
+
 When you want to commit something in your branch, be sure to be in your branch. Add -u parameter to set upstream.
 
 You can see all branches created by using :
-```
+
+```sh
 $ git branch -a
 ```
 
 More info on this can be found [here](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)
 
 Make sure to make a Pull Request before merging with the master branch.
-
-
-
-

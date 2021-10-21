@@ -1,176 +1,180 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
-@import url('https://fonts.googleapis.com/css?family=Barlow:400,500,700');
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Barlow:400,500,700");
 
 .primary-header {
-	display: flex;
-	background: #111;
-	justify-content: space-between;
-	padding: 20px ;
-	align-items: center;
+  display: flex;
+  background: #111;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
 }
 
 .logo {
-	display: flex;
+  display: flex;
 }
 
 .logo h1 {
-	font-size: 36px;
-	color: #fff;
-	text-transform: uppercase;
-	font-family: 'Lato', sans-serif;
-	letter-spacing: 2px;
+  font-size: 36px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 2px;
 }
 
 .input {
-	font-size: 22px;
-	padding: 4px 8px;
-	border-radius: 2px;
+  font-size: 22px;
+  padding: 4px 8px;
+  border-radius: 2px;
 }
 
 .input::-webkit-input-placeholder {
-	font-size: 18px;
+  font-size: 18px;
 }
 .issue {
-	display: flex;
-	justify-content: space-between;
-	padding: 20px;
-	border-radius: 4px;
-	box-shadow: 0 0.5rem 1rem rgba(0,0,0,.175);
-	border: 1px solid rgba(0,0,0,.075);
-	width: 800px;
-	margin: 20px auto;
-	background: #b8c4d1;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  width: 800px;
+  margin: 20px auto;
+  background: #b8c4d1;
 }
 
 .issueOnClick {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .detailInfo {
-	padding: 20px;
-	border-radius: 4px;
-	box-shadow: 0 0.5rem 1rem rgba(0,0,0,.175);
-	border: 1px solid rgba(0,0,0,.075);
-	width: 800px;
-	margin: 20px auto;
-	background: linear-gradient(to bottom, rgba(184, 196, 209,1), rgba(30,144,255,0.5)) ;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  width: 800px;
+  margin: 20px auto;
+  background: linear-gradient(
+    to bottom,
+    rgba(184, 196, 209, 1),
+    rgba(30, 144, 255, 0.5)
+  );
 }
 
 .user-name {
-	text-align: center;
-	font-size: 12px;
+  text-align: center;
+  font-size: 12px;
 }
 
 .issue-title {
-	font-size: 24px;
-	margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .issue-details {
-	word-break: break-word;
-	font-family: 'Barlow', sans-serif;
+  word-break: break-word;
+  font-family: "Barlow", sans-serif;
 }
 
 .issue-title-div {
-	margin-left: 40px;
-	width: 100px;
+  margin-left: 40px;
+  width: 100px;
 }
 
 .issue-title-div img {
-	width: 80px;
-	border-radius: 50%;
-	height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  height: 80px;
 }
-.input-box{
-	width: 300px;
-	height: 2.4rem;
+.input-box {
+  width: 300px;
+  height: 2.4rem;
 }
 .input-box button {
-	height: 2.4rem;
-	border: 0;
-	outline: 0;
-	background: transparent;
-	color: #fff;
-	text-transform: uppercase;
+  height: 2.4rem;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
 }
 .input-text {
-	height: 2.4rem;
-	width: 240px;
-	padding: 10px;
+  height: 2.4rem;
+  width: 240px;
+  padding: 10px;
 }
 .scroll-btn {
-	width: 5rem;
-	height: 2.4rem;
-	background: black;
-	color: #fff;
-	position: fixed;
-	top: 50%;
-	margin-left: 20px;
+  width: 5rem;
+  height: 2.4rem;
+  background: black;
+  color: #fff;
+  position: fixed;
+  top: 50%;
+  margin-left: 20px;
 }
 .after {
-	right:0;
-	margin-right: 20px;
+  right: 0;
+  margin-right: 20px;
 }
-.labels-main{
-	margin: 20px;
-	/*margin: 0 auto;*/
-	text-align: center;
+.labels-main {
+  margin: 20px;
+  /*margin: 0 auto;*/
+  text-align: center;
 }
 .labels-main div {
-	display: inline-block;
-	margin-right: 10px;
-	color: black;
-	font-size: 13px;
-	letter-spacing: 1px;
+  display: inline-block;
+  margin-right: 10px;
+  color: black;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 .label {
-	width: 4.2rem;
-	height: 1.6rem;
-	border: 0;
-	outline: 0;
-	background: transparent;
-	color: #fff;
-	border-radius: 4px;
-	font-size: 12px;
-	font-weight: 500;
-	cursor: pointer;
-	display: inline-block;
-	margin: 4px 2px;
+  width: 4.2rem;
+  height: 1.6rem;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+  margin: 4px 2px;
 }
 .bug {
-	background: red;
-	width: 3.2rem;
+  background: red;
+  width: 3.2rem;
 }
 .level {
-	background: #bca2d6;
+  background: #bca2d6;
 }
 .type {
-	background: #9fb9ce;
+  background: #9fb9ce;
 }
 .component {
-	background: #1D76DA;
-	width: 5.2rem;
+  background: #1d76da;
+  width: 5.2rem;
 }
 .pop-repo {
-	margin: 0 4px 4px 0;
-	outline: 0;
-	cursor: pointer;
-	background: #dee7ed;
+  margin: 0 4px 4px 0;
+  outline: 0;
+  cursor: pointer;
+  background: #dee7ed;
 }
 .repos p {
-	margin-right: 4px;
-	font-family: 'Barlow', sans-serif;
-	font-weight: 500;
-	font-size: 14px;
+  margin-right: 4px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
 }
 .pop-repo:hover {
-	background: #C2F27B;
-	color: 
+  background: #c2f27b;
+  color: ;
 }
 .repos {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px;
 }
