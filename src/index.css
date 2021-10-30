@@ -173,11 +173,14 @@
 }
 .pop-repo:hover {
   background: #c2f27b;
-  color: ;
 }
 .repos {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin: 20px;
+}
+
+.issue-url {
+  color: darkgreen;
 }

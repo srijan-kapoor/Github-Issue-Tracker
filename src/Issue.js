@@ -18,7 +18,12 @@ class Issue extends React.Component {
       <React.Fragment>
         {(data ? data : []).map((v, i) => {
           return (
-            <div>
+            <a
+              className="issue-url"
+              href={v.html_url}
+              target="_blank"
+              rel="noreferrer"
+            >
               {v.isClicked ? (
                 <div
                   className="detailInfo"
@@ -31,7 +36,7 @@ class Issue extends React.Component {
                   <div className="issueOnClick">
                     <div>
                       <h2 className="issue-title">{v.title}</h2>
-                      <p className="issue-details">({v?.body?.slice(0, 500)}</p>
+                      <p className="issue-details">{v?.body?.slice(0, 500)}</p>
                     </div>
                     <div className="issue-title-div">
                       <img src={v.user.avatar_url} alt="avatar_img" />
@@ -47,7 +52,7 @@ class Issue extends React.Component {
                 >
                   <div>
                     <h2 className="issue-title">{v.title}</h2>
-                    <p className="issue-details">({v?.body?.slice(0, 300)}</p>
+                    <p className="issue-details">{v?.body?.slice(0, 300)}</p>
                   </div>
                   <div className="issue-title-div">
                     <img src={v.user.avatar_url} alt="avatar_img" />
@@ -55,7 +60,7 @@ class Issue extends React.Component {
                   </div>
                 </div>
               )}
-            </div>
+            </a>
           );
         })}
       </React.Fragment>
